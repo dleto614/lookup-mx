@@ -21,8 +21,8 @@ func main() {
 	var results []string
 	var mx []*net.MX
 
-	file = flag.String("i", "", "Specify input file with ip ranges.")
-	domain = flag.String("d", "", "Specify ip range.")
+	file = flag.String("i", "", "Specify input file with a list of domains.")
+	domain = flag.String("d", "", "Specify domain.")
 	output = flag.String("o", "", "Specify the output file to write results into.")
 
 	flag.Parse()
