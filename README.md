@@ -19,9 +19,9 @@ cd lookup-mx && go build
 Usage of ./lookupmx: 
 
   -d string
-        Specify ip range.
+        Specify domain.
   -i string
-        Specify input file with ip ranges.
+        Specify input file with a list of domains.
   -o string
         Specify the output file to write results into.
 ```
