@@ -42,9 +42,20 @@ func main() {
 
 	for _, DataString := range data {
 
-		mx, _ = net.LookupMX(DataString)
-		results = ParseMX(mx)
+		var err error
 
+		mx, err = net.LookupMX(DataString)
+
+		// Check if nil or not for error after looking up MX records.
+		if err != nil {
+			// Print error and go back to the for loop without continuing the code in the for loop.
+
+			// This will skip this domain since it doesn't have a valid MX record so we don't need
+			// to do anythng else and can just iterate to the next domain in our array.
+			log.Println(err)
+			continue
+		}
+		
 		JsonResult := ConvertJson(DataString, results)
 
 		// Write to stdin if no output file arg was passed
